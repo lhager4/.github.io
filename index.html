@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eco-Confluence | Official Portal</title>
+    <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --light-green: #d8f3dc;
+            --accent-earth: #74c69d;
+            --dark-text: #1b4332;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-green);
+            color: var(--dark-text);
+        }
+
+        header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        nav {
+            background-color: var(--dark-text);
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-green);
+            border-bottom: 2px solid var(--accent-earth);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid var(--accent-earth);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--dark-text);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-green);
+            color: var(--white);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌿 The Eco-Confluence 🌿</h1>
+        <p>A Decentralized, Equal-Rights Network Micronation</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#constitution">Constitution</a>
+        <a href="#register">Register Land</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>Our Vision</h2>
+            <p>Welcome to the world's first borderless eco-micronation. We are a global network of physically connected properties dedicated to environmental sustainability and absolute equal rights. Whether you own a massive farm or rent a single room, your space can become a sovereign enclave of our green future.</p>
+        </section>
+
+        <section id="constitution">
+            <h2>The Green Mandate & Constitution</h2>
+            <p><strong>Article I: Absolute Equality</strong><br>Every citizen holds equal voting power. There are no kings, presidents, or rulers. We operate as a direct digital democracy.</p>
+            <p><strong>Article II: The Ecological Pledge</strong><br>All registered lands must actively minimize carbon footprints, reduce waste, and nurture local biodiversity.</p>
+            <p><strong>Article III: Sovereignty of the Mind</strong><br>Citizens must follow local host-nation property laws while treating their designated space as a cultural sanctuary of our nation.</p>
+        </section>
+
+        <section id="register">
+            <h2>Register Your Enclave</h2>
+            <p>Ready to declare your property a piece of our nation? Fill out the declaration below:</p>
+            <form id="landForm">
+                <div class="form-group">
+                    <label for="name">Citizen Name:</label>
+                    <input type="text" id="name" required placeholder="e.g., Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enclaveName">Desired Name for Your Land:</label>
+                    <input type="text" id="enclaveName" required placeholder="e.g., The Mossy Oak Province">
+                </div>
+                <div class="form-group">
+                    <label for="landType">Land Classification:</label>
+                    <select id="landType">
+                        <option value="biosphere">Biosphere Reserve (Yard, Garden, Farm)</option>
+                        <option value="embassy">Zero-Waste Embassy (Apartment, Room, Desk)</option>
+                        <option value="digital">Digital Sanctuary (Server, Website)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">General Location (City/Country):</label>
+                    <input type="text" id="location" required placeholder="e.g., Berlin, Germany">
+                </div>
+                <button type="submit">Submit Declaration of Sovereignty</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 The Eco-Confluence. All rights equal. All lands green.</p>
+    </footer>
+
+    <script>
+        document.getElementById('landForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const enclave = document.getElementById('enclaveName').value;
+            alert(`🎉 Success! "${enclave}" has been symbolically registered to the network. Welcome to the nation!`);
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

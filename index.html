@@ -172,7 +172,48 @@
             alert(`🎉 Success! "${enclave}" has been symbolically registered to the network. Welcome to the nation!`);
             this.reset();
         });
-    </script>
+   <script>
+    // Paste your Google Web App URL between the quotes below:
+    const WEB_APP_URL = "YOUR_GOOGLE_WEB_APP_URL_HERE";
+
+    document.getElementById('landForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitButton = this.querySelector('button');
+        submitButton.textContent = "Registering Enclave...";
+        submitButton.disabled = true;
+
+        const formData = {
+            name: document.getElementById('name').value,
+            enclaveName: document.getElementById('enclaveName').value,
+            landType: document.getElementById('landType').value,
+            location: document.getElementById('location').value
+        };
+
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Needed to avoid cross-origin issues with Apps Script
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(() => {
+            alert(`🎉 Success! "${formData.enclaveName}" has been logged in the national database. Welcome to the nation!`);
+            document.getElementById('landForm').reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Something went wrong. Please try again.');
+        })
+        .finally(() => {
+            submitButton.textContent = "Submit Declaration of Sovereignty";
+            submitButton.disabled = false;
+        });
+    });
+</script>
+
 
 </body>
 </html>
